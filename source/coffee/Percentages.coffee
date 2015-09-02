@@ -1,5 +1,5 @@
 ###
-Percentages.js - v1.0
+Percentages.js - v1.1.0
 https://github.com/mzilverberg/Percentages
 ###
 
@@ -16,7 +16,8 @@ Percentages = (values) ->
             i = 0
             j = 0
             i += j for j in data
-            i
+            # Throw an error if non-numeric array values are found
+            sum = if typeof i is "number" then i else console.error "Percentages.js Error: Some of the values in the array are not numeric."
 
         # Calculate percentages
         calcPercentages: ->
@@ -29,7 +30,7 @@ Percentages = (values) ->
                 # Store percentages and remainder in arrays
                 self.abs.push(abs)
                 self.rounded.push(rounded)
-                self.fixed.push(rounded)
+                self.corrected.push(rounded)
                 self.remainders.push(remainder)
                 i++
             methods.fixPercentages() if self.total isnt 0
@@ -37,7 +38,7 @@ Percentages = (values) ->
 
         # Fix rounded percentages if rounded total does not equal 100%
         fixPercentages: ->
-            roundedTotal = methods.arraySum(self.fixed)
+            roundedTotal = methods.arraySum(self.corrected)
             while roundedTotal < 100
                 # Get highest remainder
                 highestRemainder = Math.max.apply(Math, self.remainders)
@@ -46,7 +47,7 @@ Percentages = (values) ->
                     x = if curr > arr[prev] then i else prev
                 ), 0)
                 # Update rounded percentage
-                self.fixed[index] = self.fixed[index] + 1
+                self.corrected[index] = self.corrected[index] + 1
                 # Unset current highest remainder
                 self.remainders[index] = -1
                 # Update total value
@@ -60,7 +61,7 @@ Percentages = (values) ->
     # Create new arrays for percentages and remainders
     self.abs = []
     self.rounded = []
-    self.fixed = []
+    self.corrected = []
     self.remainders = []
     # Calculate percentages
     methods.calcPercentages()
@@ -69,5 +70,5 @@ Percentages = (values) ->
     {
         abs: self.abs
         rounded: self.rounded
-        fixed: self.fixed
+        corrected: self.corrected
     }

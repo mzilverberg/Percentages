@@ -24,7 +24,7 @@ function updatePoll(event) {
         votes.push(parseInt(voteCells[i].textContent));
     }
     // Recalculate percentages
-    var percentages = new Percentages(votes).fixed;
+    var percentages = new Percentages(votes).corrected;
     // Update percentages in table
     for(var i = 0; i < percentageCells.length; i++) {
         percentageCells[i].textContent = percentages[i] + "%";

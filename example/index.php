@@ -42,7 +42,7 @@
                     );
                     // Calculate percentages
                     $percentages = new Percentages($votes);
-                    $percentages = $percentages->get("fixed");
+                    $percentages = $percentages->get("corrected");
                     ?>
 
                     <div class="row">
@@ -82,7 +82,7 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="../dist/js/Percentages.min.js"></script>
+        <script type="text/javascript" src="../dist/js/Percentages.js"></script>
         <script type="text/javascript" src="example.js"></script>
 
     </body>
