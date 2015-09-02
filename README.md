@@ -42,3 +42,13 @@ $percentages = $percentages->get();
 // Note that only "abs", "rounded" and "fixed" are valid
 $percentages = $percentages->get("fixed");
 ```
+
+### Rounding issue example
+
+As said above: because the scripts loop through remainders until a total of 100% is reached, a difference of 1% can occur between two of the same values.
+
+```php
+$votes = array(1, 1, 1, 1, 1, 1);
+$percentages = new Percentages();
+$percentages = $percentages->get("fixed"); // output: array(17, 17, 17, 17, 16, 16)
+```
