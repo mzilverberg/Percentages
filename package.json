@@ -1,0 +1,30 @@
+{
+  "name": "Percentages",
+  "version": "1.0.0",
+  "description": "Percentages: a JavaScript function and PHP class for calculating percentages",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mzilverberg/Percentages"
+  },
+  "keywords": [
+    "percent",
+    "percentage",
+    "percentages",
+    "js",
+    "javascript",
+    "coffeescript",
+    "php"
+  ],
+  "author": "Maarten Zilverberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mzilverberg/Percentages/issues"
+  },
+  "homepage": "https://github.com/mzilverberg/Percentages",
+  "devDependencies": {
+      "grunt": "~0.4.5",
+      "grunt-contrib-coffee": "~0.11.0",
+      "grunt-contrib-watch": "~0.6.1"
+  }
+}
