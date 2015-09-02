@@ -6,7 +6,7 @@ A small `CoffeeScript` / `JavaScript` function and `PHP` class for calculating p
 
 Both `Percentages.js` and `Percentages.class.php` use the principle of the [largest remainder method](https://en.wikipedia.org/wiki/Largest_remainder_method). Each percentage will be rounded down at first. After that, the script will add 1 percent to a rounded value if this value has the highest remainder. This process continues until a total of 100% is reached.
 
-The function and class both return (1) absolute percentages, (2) rounded percentages and (3) the fixed percentages.
+The function and class both return (1) absolute percentages, (2) rounded percentages and (3) the corrected percentages.
 
 _Note: because the scripts loop through remainders until a total of 100% is reached, a difference of 1% can occur between two of the same values. See the last example below._
 
@@ -24,10 +24,10 @@ Don't forget to include the proper files ;).
 var votes = [12, 30, 2, 7, 15],
     percentages = new Percentages(votes);
 
-// Most likely, you only want to use the fixed percentages
+// Most likely, you only want to use the corrected percentages
 // Use this instead:
 var votes = [12, 30, 2, 7, 15],
-    percentage = new Percentages(votes).fixed;
+    percentage = new Percentages(votes).corrected;
 ```
 
 ### PHP example
@@ -39,8 +39,8 @@ $percentages = new Percentages();
 $percentages = $percentages->get();
 
 // If you only would like a specific type, use a parameter in the get() method
-// Note that only "abs", "rounded" and "fixed" are valid
-$percentages = $percentages->get("fixed");
+// Note that only "abs", "rounded" and "corrected" are valid
+$percentages = $percentages->get("corrected");
 ```
 
 ### Rounding issue example
@@ -50,5 +50,5 @@ As said above: because the scripts loop through remainders until a total of 100%
 ```php
 $votes = array(1, 1, 1, 1, 1, 1);
 $percentages = new Percentages();
-$percentages = $percentages->get("fixed"); // output: array(17, 17, 17, 17, 16, 16)
+$percentages = $percentages->get("corrected"); // output: array(17, 17, 17, 17, 16, 16)
 ```

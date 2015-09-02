@@ -1,0 +1,30 @@
+{
+  "name": "Percentages",
+  "version": "1.1.0",
+  "homepage": "https://github.com/mzilverberg/Percentages",
+  "authors": [
+    "Maarten Zilverberg"
+  ],
+  "description": "A small CoffeeScript/JavaScript function and PHP class for calculating percentages that solves rounding issues",
+  "main": [
+      "dist/js/Percentages.js",
+      "dist/php/Percentages.class.php"
+  ],
+  "keywords": [
+    "Percent",
+    "Percentages",
+    "%",
+    "JS",
+    "JavaScript",
+    "CoffeeScript",
+    "PHP"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
