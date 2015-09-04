@@ -1,5 +1,7 @@
 # Percentages
 
+![Bower Version](https://img.shields.io/bower/v/percentages.svg)
+
 A small `CoffeeScript` / `JavaScript` function and `PHP` class for calculating percentages that solves rounding issues.
 
 ## How does it work
@@ -13,9 +15,19 @@ _Note: because the scripts loop through remainders until a total of 100% is reac
 ### Supported browsers (for JS)
 Chrome, Firefox, Safari 4+, IE9+
 
-## Usage
+## Installation
 
-Don't forget to include the proper files ;).
+### Install with Bower
+
+```
+$ bower install percentages
+```
+
+### Or: include files
+
+Include the `CoffeeScript`, `JavaScript` or `PHP` file.
+
+## Examples
 
 ### JavaScript example
 
