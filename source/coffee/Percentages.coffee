@@ -1,5 +1,5 @@
 ###
-Percentages.js - v1.1.1
+Percentages.js - v1.1.2
 https://github.com/mzilverberg/Percentages
 ###
 
