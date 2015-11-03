@@ -64,3 +64,23 @@ $votes = array(1, 1, 1, 1, 1, 1);
 $percentages = new Percentages();
 $percentages = $percentages->get("corrected"); // output: array(17, 17, 17, 17, 16, 16)
 ```
+
+## Testing
+
+Run automated tests with command line.
+
+### JavaScript
+
+_This requires [grunt-contrib-jasmine](https://github.com/gruntjs/grunt-contrib-jasmine), which is installed as a devDependency._
+```
+$ grunt test
+```
+
+### PHP
+
+_This requires [PHPUnit](https://github.com/sebastianbergmann/phpunit)._
+
+```
+$ cd tests
+$ cd phpunit
+```

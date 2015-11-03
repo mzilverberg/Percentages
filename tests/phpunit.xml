@@ -1,8 +1,8 @@
 <phpunit>
     <testsuites>
         <testsuite name="percentages">
-            <file>PercentagesTest.php</file>
-            <file>ExceptionTest.php</file>
+            <file>php/PercentagesTest.php</file>
+            <file>php/ExceptionTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
