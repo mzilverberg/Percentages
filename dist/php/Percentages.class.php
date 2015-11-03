@@ -1,6 +1,6 @@
 <?php
 /*
-Percentages.class.php - v1.1.0
+Percentages.class.php - v1.1.1
 https://github.com/mzilverberg/Percentages
 */
 class Percentages {
@@ -10,12 +10,12 @@ class Percentages {
         try {
             // Throw an error if non-numeric array values are found
             if(array_sum(array_map("is_numeric", $array)) !== count($array)) {
-                throw new Exception("<strong>Percentages.class.php Exception:</strong> Some of the values in the array are not numeric.", 1);
+                throw new RuntimeException("<strong>Percentages.class.php Exception:</strong> Some of the values in the array are not numeric.", 1);
             }
             // Otherwise, return the sum of all array values
             return array_sum($array);
-        } catch(Exception $e) {
-            die($e->getMessage());
+        } catch(RuntimeException $e) {
+            echo $e->getMessage();
         }
     }
 

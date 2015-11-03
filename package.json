@@ -1,6 +1,6 @@
 {
   "name": "Percentages",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Percentages: a JavaScript function and PHP class for calculating percentages",
   "main": "Gruntfile.js",
   "repository": {
