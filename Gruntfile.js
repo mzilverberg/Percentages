@@ -29,6 +29,15 @@ module.exports = function(grunt) {
             }
         },
 
+        // Tests
+        jasmine: {
+            src: "dist/js/Percentages.min.js",
+            options: {
+                specs: "tests/js/*.js",
+                display: "full"
+            }
+        },
+
         // Compile on save
         // https://github.com/gruntjs/grunt-contrib-watch
         watch: {
@@ -43,6 +52,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-coffee");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-contrib-jasmine");
 
     grunt.registerTask("default", ["coffee", "uglify", "watch"]);
+    grunt.registerTask("test", ["coffee", "uglify", "jasmine"]);
 };
