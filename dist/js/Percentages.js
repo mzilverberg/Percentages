@@ -1,6 +1,6 @@
 
 /*
-Percentages.js - v1.1.2
+Percentages.js - v1.1.3
 https://github.com/mzilverberg/Percentages
  */
 var Percentages;
@@ -37,7 +37,7 @@ Percentages = function(values) {
       }
     },
     fixPercentages: function() {
-      var highestRemainder, index, roundedTotal;
+      var highestRemainder, i, index, indexes, j, roundedTotal;
       roundedTotal = methods.arraySum(self.corrected);
       while (roundedTotal < 100) {
         highestRemainder = Math.max.apply(Math, self.remainders);
@@ -45,6 +45,20 @@ Percentages = function(values) {
           var x;
           return x = curr > arr[prev] ? i : prev;
         }), 0);
+        indexes = [];
+        i = -1;
+        while ((i = self.remainders.indexOf(highestRemainder, i + 1)) !== -1) {
+          indexes.push(i);
+        }
+        if (indexes.length > 1) {
+          j = 0;
+          while (j < indexes.length) {
+            if (self.rounded[indexes[j]] > self.rounded[index]) {
+              index = indexes[j];
+            }
+            j++;
+          }
+        }
         self.corrected[index] = self.corrected[index] + 1;
         self.remainders[index] = -1;
         roundedTotal++;

@@ -82,5 +82,5 @@ _This requires [PHPUnit](https://github.com/sebastianbergmann/phpunit)._
 
 ```
 $ cd tests
-$ cd phpunit
+$ phpunit
 ```
