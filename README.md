@@ -12,9 +12,6 @@ The function and class both return (1) absolute percentages, (2) rounded percent
 
 _Note: because the scripts loop through remainders until a total of 100% is reached, a difference of 1% can occur between two of the same values. See the last example below._
 
-### Supported browsers (for JS)
-Chrome, Firefox, Safari 4+, IE9+
-
 ## Installation
 
 ### Install with Bower
