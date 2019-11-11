@@ -1,6 +1,6 @@
 # Percentages
 
-![Bower Version](https://img.shields.io/bower/v/percentages.svg)
+![NPM Version](https://img.shields.io/npm/v/percentages)
 
 A small `CoffeeScript` / `JavaScript` function and `PHP` class for calculating percentages that solves rounding issues.
 
@@ -14,10 +14,10 @@ _Note: because the scripts loop through remainders until a total of 100% is reac
 
 ## Installation
 
-### Install with Bower
+### Install with NPM
 
 ```
-$ bower install percentages
+$ npm install percentages
 ```
 
 ### Include files

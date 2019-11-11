@@ -1,6 +1,6 @@
 {
   "name": "percentages",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Percentages: a JavaScript and PHP class for calculating percentages and rounding them through the largest remainder method",
   "main": "./source/js/Percentages.js",
   "scripts": {

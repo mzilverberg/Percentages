@@ -1,6 +1,6 @@
 <?php
 /*
-Percentages.class.php - v2.0.0
+Percentages.class.php - v2.0.1
 https://github.com/mzilverberg/Percentages
 */
 class Percentages {
