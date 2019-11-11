@@ -1,4 +1,4 @@
-<?php include("../dist/php/Percentages.class.php"); ?>
+<?php include("../source/php/Percentages.class.php"); ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -82,7 +82,7 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="../dist/js/Percentages.js"></script>
+  <script type="text/javascript" src="../source/js/Percentages.js"></script>
   <script type="text/javascript" src="example.js"></script>
 
 </body>
