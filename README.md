@@ -23,35 +23,38 @@ Chrome, Firefox, Safari 4+, IE9+
 $ bower install percentages
 ```
 
-### Or: include files
+### Include files
 
-Include the `CoffeeScript`, `JavaScript` or `PHP` file.
+Include the `JavaScript` or `PHP` file.
 
 ## Examples
 
 ### JavaScript example
 
 ```javascript
-// For comparison, the function returns all 3 types of percentages
-var votes = [12, 30, 2, 7, 15],
-    percentages = new Percentages(votes);
+// For comparison reasons, the function returns more than the corrected percentages
+const Percentages = require('percentages');
+const votes = [12, 30, 2, 7, 15];
+const percentages = new Percentages(votes);
 
 // Most likely, you only want to use the corrected percentages
 // Use this instead:
-var votes = [12, 30, 2, 7, 15],
-    percentage = new Percentages(votes).corrected;
+const Percentages = require('percentages');
+const votes = [12, 30, 2, 7, 15],
+const votesPercentages = new Percentages(votes).corrected;
 ```
 
 ### PHP example
 
 ```php
-// By default all 3 types will be returned
+// For comparison reasons, the function returns more than the corrected percentages
+require_once('path/to/Percentages.class.php');
 $votes = array(12, 30, 2, 7, 15);
 $percentages = new Percentages();
 $percentages = $percentages->get();
 
 // If you only would like a specific type, use a parameter in the get() method
-// Note that only "abs", "rounded" and "corrected" are valid
+// Note that only "absolute", "rounded" and "corrected" are valid
 $percentages = $percentages->get("corrected");
 ```
 

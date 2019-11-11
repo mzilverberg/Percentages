@@ -24,13 +24,13 @@ class Percentages {
     // Loop through options
     for($i = 0; $i < $this->opt_count; $i++) {
       // Calculate percentages and remainder
-      $abs = $this->total === 0 ? 0 : ($this->values[$i] / $this->total) * 100;
-      $rounded = floor($abs);
-      $remainder = $abs - $rounded;
+      $absolute = $this->total === 0 ? 0 : ($this->values[$i] / $this->total) * 100;
+      $rounded = floor($absolute);
+      $remainder = $absolute - $rounded;
       // Store remainder as a string in a different array which is used to compare multiple occurrences of the same remainder
       $str_remainder = (String)$remainder;
       // Store percentages and remainders in arrays
-      array_push($this->abs, $abs);
+      array_push($this->absolute, $absolute);
       array_push($this->rounded, $rounded);
       array_push($this->corrected, $rounded);
       array_push($this->remainders, $remainder);
@@ -74,14 +74,16 @@ class Percentages {
 
   // Return calculated percentages
   /*
-  @param `$variant` (String, optional):     "abs", "rounded" or "corrected"
+  @param `$variant` (String, optional):     "absolute", "rounded", "corrected", "roundedSum" or "correctedSum"
   */
   public function get($variant = "") {
     // Save variants
     $ret = array(
-      "abs"       => $this->abs,
-      "rounded"   => $this->rounded,
-      "corrected" => $this->corrected
+      "absolute"      => $this->absolute,
+      "rounded"       => $this->rounded,
+      "corrected"     => $this->corrected,
+      "roundedSum"    => $this->array_sum($this->rounded),
+      "correctedSum"  => $this->array_sum($this->corrected)
     );
     // If a specific variant is requested, return only that variant
     // Otherwise, return all variants combined
@@ -96,7 +98,7 @@ class Percentages {
     // Calculate total value count by adding up
     $this->total = $this->array_sum($this->values);
     // Create new arrays for percentages and remainders
-    $this->abs = array();
+    $this->absolute = array();
     $this->rounded = array();
     $this->corrected = array();
     $this->remainders = array();
