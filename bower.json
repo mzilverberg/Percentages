@@ -1,6 +1,6 @@
 {
   "name": "Percentages",
-  "version": "1.1.3",
+  "version": "2.0.0",
   "homepage": "https://github.com/mzilverberg/Percentages",
   "authors": [
     "Maarten Zilverberg"
@@ -11,13 +11,16 @@
       "dist/php/Percentages.class.php"
   ],
   "keywords": [
-    "Percent",
-    "Percentages",
+    "percent",
+    "percentage",
+    "percentages",
     "%",
-    "JS",
-    "JavaScript",
-    "CoffeeScript",
-    "PHP"
+    "largest remainder",
+    "js",
+    "javascript",
+    "module",
+    "es6",
+    "php"
   ],
   "license": "MIT",
   "ignore": [
