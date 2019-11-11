@@ -8,7 +8,7 @@ A small `CoffeeScript` / `JavaScript` function and `PHP` class for calculating p
 
 Both `Percentages.js` and `Percentages.class.php` use the principle of the [largest remainder method](https://en.wikipedia.org/wiki/Largest_remainder_method). Each percentage will be rounded down at first. After that, the script will add 1 percent to a rounded value if this value has the highest remainder. This process continues until a total of 100% is reached.
 
-The function and class both return (1) absolute percentages, (2) rounded percentages and (3) the corrected percentages.
+The function and class both return (1) absolute percentages, (2) rounded percentages and (3) the corrected percentages, as well as (4) the sum of the rounded percentages and (5) the sum of the corrected percentages, which should always be `100`.
 
 _Note: because the scripts loop through remainders until a total of 100% is reached, a difference of 1% can occur between two of the same values. See the last example below._
 

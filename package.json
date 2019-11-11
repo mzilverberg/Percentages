@@ -1,7 +1,7 @@
 {
   "name": "percentages",
   "version": "2.0.0",
-  "description": "Percentages: a JavaScript function and PHP class for calculating percentages and rounding them through the largest remainder method",
+  "description": "Percentages: a JavaScript and PHP class for calculating percentages and rounding them through the largest remainder method",
   "main": "./source/js/Percentages.js",
   "scripts": {
     "test": "jasmine JASMINE_CONFIG_PATH='./tests/js/jasmine.json'"
