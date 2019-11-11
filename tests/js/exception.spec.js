@@ -1,20 +1,16 @@
-describe("Exception", function() {
-
-  // Globals
-  var array,
-  percentages;
-
-  // Helpers
-  beforeEach(function() {
-    spyOn(console, "error");
-    array = ["ABC"];
-    percentages = new Percentages(array);
-  });
+const Percentages = require('../../source/js/Percentages');
+describe('Exception', () => {
 
   // Test if function throws an error if non-numeric array values are found
-  it("Test console.error()", function() {
-    // Expect an error
-    expect(console.error).toHaveBeenCalledWith("Percentages.js Error: Some of the values in the array are not numeric.");
+  it('Test console.error()', () => {
+    
+    const array = ['ABC'];
+    spyOn(console, 'error').and.callFake(() => {
+      const percentages = new Percentages(array);
+      expect(console.error).toHaveBeenCalledWith(`Some values in the array ["${array}"] are not numeric.`);
+      done();
+    });
+
   });
 
 });

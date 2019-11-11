@@ -4,7 +4,7 @@
   "description": "Percentages: a JavaScript function and PHP class for calculating percentages and rounding them through the largest remainder method",
   "main": "./source/js/Percentages.js",
   "scripts": {
-    "test": ""
+    "test": "jasmine JASMINE_CONFIG_PATH='./tests/js/jasmine.json'"
   },
   "repository": {
     "type": "git",

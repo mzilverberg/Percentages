@@ -1,6 +1,6 @@
 <?php
 // Require class
-require_once("../dist/php/Percentages.class.php");
+require_once("../source/php/Percentages.class.php");
 
 // Automated tests
 class PercentagesTest extends PHPUnit_Framework_TestCase {
