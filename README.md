@@ -54,7 +54,8 @@ $percentages = new Percentages();
 $percentages = $percentages->get();
 
 // If you only would like a specific type, use a parameter in the get() method
-// Note that only "absolute", "rounded" and "corrected" are valid
+// Note that only "absolute", "rounded", "corrected", "roundedSum", and "correctedSum" are valid
+// The value of "correctedSum" should always be 100 (obviously), and the value of "roundedSum" differs based on input
 $percentages = $percentages->get("corrected");
 ```
 
