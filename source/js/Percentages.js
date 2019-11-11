@@ -32,23 +32,18 @@ class Percentages {
   rectify() {
     let sum = this.sum(this.corrected);
     while (sum < 100) {
-      // Get largest remainder and all array indexes
+      // Determine the largest remainder and get its array index.
+      // If there are multiple values found, take the rounded percentage value into account.
+      // E.g. rectify percentages of 49,5 and 50,5 to 49 and 51, respectively.
       const largestRemainder = Math.max(...this.remainders);
-      // Get the array indexes of the largest remainder
-      // Rectify the remainder of the highest rounded percentage first
-      const index = this.remainders
-        .reduce((array, value, index) => {
-          if (value === largestRemainder) array.push(index);
-          return array;
-        }, [])
-        .reduce((previous, current) => {
-          return this.rounded[previous] <= this.rounded[current]
-            ? previous
-            : current;
-        });
+      const index = this.remainders.reduce((array, value, index) => {
+        if (value === largestRemainder) array.push(index);
+        return array;
+      }, []).reduce((previous, current) => {
+        return this.rounded[current] > this.rounded[previous] ? current : previous;
+      });
       this.corrected[index]++;
       this.remainders[index] = -1;
-      //   console.log(this.remainders, index, this.remainders[index]);
       sum++;
     }
   }
