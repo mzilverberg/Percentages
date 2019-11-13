@@ -97,7 +97,7 @@ final class Percentages {
 
 
 	/**
-	 * Try to calculate the sum of all values in an error.
+	 * Try to calculate the sum of all values in an array.
 	 *
 	 * @param Array $array        Array containing the values we need to calculate the sum of.
 	 * @return Mixed              Sum of array values or RuntimeException.
@@ -146,13 +146,19 @@ final class Percentages {
 			// E.g. rectify percentages of 49,5 and 50,5 to 49 and 51, respectively.
 			$largest = max( $this->remainders );
 			$indexes = array_keys( $this->remainders, $largest, true );
-			$index   = array_reduce(
-				$indexes,
-				function( $previous, $current ) {
-					return $this->rounded[ $current ] > $this->rounded[ $previous ] ? $current : $previous;
-				},
-				0
-			);
+			$index   = 0;
+			if ( count( $indexes ) > 1 ) {
+				array_reduce(
+					$indexes,
+					function( $carry, $item ) use ( &$index ) {
+						$index = $this->rounded[ $carry ] > $this->rounded[ $item ] ? $carry : $item;
+						return $carry;
+					},
+					0
+				);
+			} else {
+				$index = $indexes[ $index ];
+			}
 			$this->corrected[ $index ]++;
 			$this->remainders[ $index ] = -1;
 			$this->corrected_sum++;
