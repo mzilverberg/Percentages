@@ -1,4 +1,8 @@
-<?php include("../source/php/Percentages.class.php"); ?>
+<?php
+// phpcs:ignoreFile
+include( '../source/php/class-percentages.php' );
+use MZ\Percentages as Percentages;
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -30,19 +34,20 @@
         <p>For the sake of the demo, the amount of votes is shown and voting will not be disabled after you cast a vote.</p>
         <?php
         // Example amount of votes
-        $votes = array(21, 13, 4, 0, 3, 1);
+				$votes = array( 21, 13, 4, 0, 3, 1 );
         // Voting options
         $frameworks = array(
-          array("name" => "Bootstrap",            "votes" => $votes[0]),
-          array("name" => "Foundation",           "votes" => $votes[1]),
-          array("name" => "Materialize",          "votes" => $votes[2]),
-          array("name" => "Pure.css",             "votes" => $votes[3]),
-          array("name" => "My own framework",     "votes" => $votes[4]),
-          array("name" => "No framework at all",  "votes" => $votes[5])
+          array( 'name' => 'Bootstrap',            'votes' => $votes[0] ),
+          array( 'name' => 'Foundation',           'votes' => $votes[1] ),
+          array( 'name' => 'Materialize',          'votes' => $votes[2] ),
+          array( 'name' => 'Pure.css',             'votes' => $votes[3] ),
+          array( 'name' => 'My own framework',     'votes' => $votes[4] ),
+          array( 'name' => 'No framework at all',  'votes' => $votes[5] )
         );
         // Calculate percentages
-        $percentages = new Percentages($votes);
-        $percentages = $percentages->get("corrected");
+				$percentages = new Percentages( $votes );
+				$rounded     = $percentages->get_absolute();
+        $corrected   = $percentages->get_corrected();
         ?>
 
         <div class="row">
@@ -53,7 +58,8 @@
                   <tr>
                     <th>My favorite framework:</th>
                     <th>Votes</th>
-                    <th>%</th>
+										<th>Rounded %</th>
+                    <th>Rectified %</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -64,15 +70,23 @@
                   ?>
                     <tr>
                       <td class="option">
-                        <button type="button" class="btn btn-primary btn-sm" value="<?php echo $i; ?>"><?php echo $framework["name"]; ?></button>
+                        <button type="button" class="btn btn-primary btn-sm" value="<?php echo $i; ?>"><?php echo $framework['name']; ?></button>
                       </td>
-                      <td class="votes"><?php echo $framework["votes"]; ?></td>
-                      <td class="percentage"><?php echo $percentages[$i]; ?>%</td>
+                      <td class="votes"><?php echo $framework['votes']; ?></td>
+                      <td class="percentage"><?php echo $rounded[ $i ]; ?>%</td>
+                      <td class="percentage"><?php echo $corrected[ $i ]; ?>%</td>
                     </tr>
                   <?php
                   $i++;
                   } ?>
                 </tbody>
+								<tfoot>
+									<tr>
+										<th colspan="2">Totals:</th>
+										<th><?php echo $percentages->get_rounded_sum(); ?>%</th>
+										<th><?php echo $percentages->get_corrected_sum(); ?>%</th>
+									</tr>
+								</tfoot>
               </table>
             </form>
           </div>
@@ -82,7 +96,6 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="../source/js/Percentages.js"></script>
   <script type="text/javascript" src="example.js"></script>
 
 </body>
