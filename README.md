@@ -70,6 +70,14 @@ $percentages = new Percentages();
 $percentages = $percentages->get_corrected(); // output: array( 17, 17, 17, 17, 16, 16 )
 ```
 
+### Bundled example
+
+This project comes with an example that relies on both the PHP and JavaScript class. To run it, create a host through software like XAMPP or MAMP and run the following command:
+
+```
+npm run example
+```
+
 ## Testing
 
 Run automated tests with command line.
