@@ -1,6 +1,6 @@
 {
   "name": "percentages",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Percentages: a JavaScript and PHP class for calculating percentages and rounding them through the largest remainder method",
   "main": "./source/js/Percentages.js",
   "scripts": {
@@ -36,10 +36,8 @@
     "babel-loader": "^8.0.6",
     "jasmine": "^3.5.0",
     "vue-async-computed": "^3.7.0",
+		"vue": "^2.6.10",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
-  },
-  "dependencies": {
-    "vue": "^2.6.10"
   }
 }

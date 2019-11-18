@@ -7,7 +7,7 @@
  * @author     Maarten Zilverberg <maarten@mzilverberg.nl>
  * @license    https://www.gnu.org/licenses/gpl-2.0.html GPLv2
  * @link       https://github.com/mzilverberg/Percentages
- * @version    2.1.0
+ * @version    2.1.1
  */
 
 namespace MZ;
