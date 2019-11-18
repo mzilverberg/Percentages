@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Percentages example</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Percentages</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<p>This example uses both the PHP and JavaScript classes. While, the poll's options and votes are determined client-side, initially the percentages are calculated server-side. From the moment you cast a vote, all percentages (and sums) will be calculated through the JavaScript class.</p>
+						<p>For the sake of the demo, the amount of votes is shown and voting will not be disabled after you cast a vote.</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="example">
+							<table class="table">
+								<thead>
+									<tr>
+										<th colspan="3">Framework</th>
+										<th colspan="3">Percentage (%)</th>
+									</tr>
+									<tr>
+										<th>Name</th>
+										<th colspan="2">Votes</th>
+										<th>Absolute</th>
+										<th>Rounded</th>
+										<th>Corrected</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr v-for="(option, index) in options">
+										<td>{{ option.name }}</td>
+										<td>{{ option.votes }}</td>
+										<td><button class="btn btn-primary" v-on:click="vote(option)">Vote!</button></td>
+										<td><span v-if="percentages !== null">{{ percentages.absolute[index] }}%</span></td>
+										<td><span v-if="percentages !== null">{{ percentages.rounded[index] }}%</span></td>
+										<td><span v-if="percentages !== null">{{ percentages.corrected[index] }}%</span></td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th scope="row" colspan="4">Total percentage (%)</th>
+										<th scope="column"><span v-if="percentages !== null">{{ percentages.roundedSum }}%</span></th>
+										<th scope="column"><span v-if="percentages !== null">{{ percentages.correctedSum }}%</span></th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="dist/example.js"></script>
+
+</body>
+</html>
